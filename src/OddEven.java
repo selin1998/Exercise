@@ -42,7 +42,7 @@ public class OddEven {
 
 
     public static void main(String[] args) {
-        int n=10;int j;
+        int n=10;
 
         int [] even=new int[n];
         int [] odd=new int[n];
