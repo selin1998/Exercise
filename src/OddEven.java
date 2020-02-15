@@ -1,18 +1,15 @@
 public class OddEven {
 
-    public static void combine(int [] odds, int[] evens ){
+    public static void combine(int [] odds, int[] evens, int [] mixed ){
 
-        int [] mixed= new int[odds.length*2];
-        int j;
+
+        int j=0;
+
         for(int i=0;i<odds.length;i++){
-            mixed[i]=odds[i];
-            System.out.print(mixed[i]+" ");
-            j=i+1;
+            mixed[j]=odds[i];
+            j++;
             mixed[j]=evens[i];
-            System.out.print(mixed[j]+" ");
-
-
-
+            j++;
         }
 
 
@@ -50,14 +47,17 @@ public class OddEven {
 
         int [] even=new int[n];
         int [] odd=new int[n];
-
+        int [] mixed= new int[2*n];
 
 
 
         fill(odd,true);
         fill(even, false);
-        combine(odd,even);
+        combine(odd,even, mixed);
 
+        for(int i=0;i<2*n;i++){
+            System.out.print(mixed[i]+" ");
+        }
 
 
 
