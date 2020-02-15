@@ -1,15 +1,16 @@
+import java.util.Arrays;
+
 public class OddEven {
 
     public static void combine(int [] odds, int[] evens, int [] mixed ){
 
 
-        int j=0;
+
 
         for(int i=0;i<odds.length;i++){
-            mixed[j]=odds[i];
-            j++;
-            mixed[j]=evens[i];
-            j++;
+            mixed[2*i]=odds[i];
+            mixed[2*i+1]=evens[i];
+
         }
 
 
@@ -40,8 +41,6 @@ public class OddEven {
         }
 
 
-
-
     public static void main(String[] args) {
         int n=10;int j;
 
@@ -55,11 +54,7 @@ public class OddEven {
         fill(even, false);
         combine(odd,even, mixed);
 
-        for(int i=0;i<2*n;i++){
-            System.out.print(mixed[i]+" ");
-        }
-
-
+        System.out.printf("Combined: %s",Arrays.toString(mixed));
 
         }
     }
